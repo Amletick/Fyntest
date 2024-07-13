@@ -28,9 +28,6 @@ class AnimalRegistry:
         self.counter = Counter()
 
     def add_animal(self, name, animal_type, commands):
-        if not (name and animal_type and commands):
-            raise ValueError("Не все поля заполнены для добавления животного")
-
         animal = None
         if animal_type.lower() == 'кошка':
             animal = Cat(name, commands)
@@ -42,9 +39,13 @@ class AnimalRegistry:
             print(f"Неизвестный тип животного: {animal_type}")
             return
 
+        if not commands or any(not cmd.strip() for cmd in commands):
+            print("Ошибка: Команды не могут быть пустыми.")
+            return
+
         self.animals.append(animal)
         print(f"Животное {name} добавлено в реестр.")
-        self.counter.add()  # Увеличиваем счетчик при добавлении нового животного
+        self.counter.add()
 
     def list_commands(self, name):
         found = False
