@@ -1,0 +1,258 @@
+    1  vscode
+    2  sudo systemd-nspawn -D /var/lib/machines/container1 /bin/bash -c "python3 /root/app.py"
+    3  sudo systemd-nspawn -D /var/lib/machines/container2 /bin/bash -c "python3 /root/app.py"
+    4  nano app.py
+    5  sudo cp app.py /var/lib/machines/container1/root/app.py
+    6  nano app.py
+    7  sudo cp app.py /var/lib/machines/container2/root/app.py
+    8  nano app.py
+    9  ps aux | grep python
+   10  machinectl list
+   11  lxc launch ubuntu:20.04 mycontainer
+   12  sudo snap install lxd
+   13  lxc launch ubuntu:20.04 mycontainer
+   14  lxc init
+   15  lxc init launch ubuntu:20.04 mycontainer
+   16  lxc init ubuntu:20.04 mycontainer
+   17  sudo lxc init ubuntu:20.04 mycontainer
+   18  sudo lxd init
+   19  lxc image list ubuntu:20.04
+   20  lxc image copy ubuntu:20.04 local:
+   21  sudo lxc image copy ubuntu:20.04 local:
+   22  lxc launch ubuntu:20.04 mycontaine
+   23  sudo lxc launch ubuntu:20.04 mycontaine
+   24  lxc config set mycontaine limits.memory 256MB
+   25  sudo lxc config set mycontaine limits.memory 256MB
+   26  lxc info mycontaine
+   27  sudo lxc info mycontaine
+   28  sudo lxc config set mycontaine boot.autostart true
+   29  lxc launch ubuntu:20.04 mycontaine --logfile=/contlog/logfile.log
+   30  reboot
+   31  sudo lxc list
+   32  sudo apt update
+   33  sudo apt install iptables
+   34  sudo sysctl -w net.ipv4.ip_forward=1
+   35  sudo iptables -t nat -A POSTROUTING -s 10.0.12.0/24 -d 10.0.13.0/24 -j MASQUERADE
+   36  sudo iptables -t nat -A POSTROUTING -s 10.0.13.0/24 -d 10.0.12.0/24 -j MASQUERADE
+   37  sudo iptables-save > /etc/iptables/rules.v4
+   38  sudo touch /etc/iptables/rules.v4
+   39  sudo iptables-save > /etc/iptables/rules.v4
+   40  ls
+   41  sudo mkdir -p /etc/iptables
+   42  sudo touch /etc/iptables/rules.v4
+   43  sudo iptables-save > /etc/iptables/rules.v4
+   44  sudo iptables-save | sudo tee /etc/iptables/rules.v4
+   45  sudo lxc list
+   46  ip addr show
+   47  sudo lxc launch ubuntu:20.04 container1 --config "volatile.eth0.hwaddr=08:00:27:a2:b3:72" --config "volatile.last_state.created=$(date +%s)"
+   48  sudo lxc network attach lxdbr0 container1 eth0 eth0
+   49  sudo lxc config device set container1 eth0 ipv4.address 10.0.13.2
+   50  sudo lxc launch ubuntu:20.04 container2 --config "volatile.eth0.hwaddr=08:00:27:a2:b3:72" --config "volatile.last_state.created=$(date +%s)"
+   51  sudo lxc network show lxdbr0
+   52  lxc launch ubuntu:20.04 mycontainer --logfile=/path/to/logfile.log
+   53  lxc list
+   54  sudo lxc list
+   55  lxc exec mycontainer -- /bin/bash
+   56  sudo lxc exec mycontainer -- /bin/bash
+   57  sudo lxc exec mycontaine -- /bin/bash
+   58  exit
+   59  reboot
+   60  mkdir web
+   61  ls
+   62  rm docker-compose.yml
+   63  mkdir db
+   64  ls
+   65  cd web
+   66  touch Dockerfile
+   67  nano Dockerfile
+   68  ls
+   69  cd..
+   70  cd ..
+   71  ;s
+   72  ls
+   73  cd ../db
+   74  cd ..
+   75  cd 
+   76  cd web
+   77  cd ../db
+   78  touch Dockerfile
+   79  nano Dockerfile
+   80  cd..
+   81  cd ..
+   82  mkdir dev prod lab
+   83  ls
+   84  cd dev
+   85  touch docker-compose.yml
+   86  nano docker-compose.yml
+   87  cd ../prod
+   88  touch docker-compose.yml
+   89  nano docker-compose.yml
+   90  cd ../lab
+   91  touch docker-compose.yml
+   92  nano docker-compose.yml
+   93  cd ..
+   94  cd dev
+   95  docker-compose up -d
+   96  cd ../web
+   97  nano Dockerfile
+   98  cd ../dev
+   99  docker-compose up -d
+  100  cd ../web
+  101  nano Dockerfile
+  102  cd ../dev
+  103  docker-compose up -d
+  104  cd ../web
+  105  nano Dockerfile
+  106  cd ..
+  107  sudo apt install distutils
+  108  sudo apt install setuptools
+  109  cd web
+  110  nano Dockerfile
+  111  cd ../dev
+  112  docker-compose up -d
+  113  cd ..
+  114  pip install setuptools
+  115  sudo apt install python3-pip pip install setuptools
+  116  sudo apt install python3-pip
+  117  pip install setuptools
+  118  sudo pip install setuptools
+  119  apt install python3-setuptools
+  120  sudo apt install python3-setuptools
+  121  sudo apt install python3-distutils
+  122  pip install distutils
+  123  python3 -m pip install setuptools
+  124  cd dev
+  125  docker-compose up -d
+  126  cd ../web
+  127  nano Dockerfile
+  128  cd ../dev
+  129  docker-compose up -d
+  130  cd ..
+  131  dcoker-compose
+  132  sudo apt update docker-compose
+  133  sudo apt update
+  134  sudo apt install docker-compose
+  135  cd dev
+  136  docker compose up -d
+  137  docker compose up
+  138  docker compose up -d
+  139  docker compose up -run
+  140  docker compose run
+  141  docker compose 
+  142  docker compose up
+  143  docker --help
+  144  docker run
+  145  docker run --help
+  146  docker compose -r
+  147  docker compose up
+  148  docker-compose up
+  149  cd.
+  150  cd ..
+  151  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  152  sudo apt -y install curl
+  153  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  154  sudo chmod +x /usr/local/bin/docker-compose
+  155  docker-compose
+  156  docker compose
+  157  docker compose up
+  158  docker-compose up
+  159  cd dev
+  160  docker-compose up
+  161  cd ../web
+  162  nano Dockerfile 
+  163  cd ../dev
+  164  docker-compose up
+  165  cd ../web
+  166  nano Dockerfile 
+  167  cd ../dev
+  168  nano docker-compose.yml 
+  169  cd ../prod
+  170  nano docker-compose.yml 
+  171  cd ../lab
+  172  nano docker-compose.yml 
+  173  cd ../dev
+  174  docker-compose up
+  175  nano docker-compose.yml 
+  176  cd..
+  177  cd ..
+  178  # Установка последних версий Docker
+  179  sudo apt-get remove docker docker-engine docker.io containerd runc
+  180  sudo apt-get update
+  181  sudo apt-get install     ca-certificates     curl     gnupg     lsb-release
+  182  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  183  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  184    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  185  sudo apt-get update
+  186  sudo apt-get install docker-ce docker-ce-cli containerd.io
+  187  # Установка последней версии Docker Compose
+  188  sudo curl -L "https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  189  sudo chmod +x /usr/local/bin/docker-compose
+  190  # Проверка версий
+  191  docker --version
+  192  docker-compose --version
+  193  sudo systemctl restart docker
+  194  cd /dev
+  195  docker-compose up -d
+  196  ls
+  197  cd ..
+  198  ls
+  199  cat "Домашние животные" "Вьючные животные" > "Друзья человека"
+  200  cat "Друзья человека"
+  201  mv "Друзья человека" "Друзья_человека"
+  202  mv "Друзья_человека" "Друзья человека"
+  203  mv "Друзья человека" "Друзья_человека"
+  204  mkdir Животные
+  205  mv Друзья_человека Животные/
+  206  ls
+  207  cd Животные/
+  208  ls
+  209  cd ..
+  210  lsb_release -a
+  211  sudo apt install software-properties-common
+  212  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/noble  mysql-8.4-lts'
+  213  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/noble  mysql-8.4'
+  214  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/noble
+
+  215  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/noble'
+  216  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/ noble mysql-8.0'
+  217  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/dists/noble/ mysql-8.0'
+  218  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/dists/ noble mysql-8.0'
+  219  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/dists/noble/mysql-8.4-lts/'
+  220  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/dists/noble/mysql-8.4-lts'
+  221  sudo add-apt-repository 'deb [arch=amd64] http://repo.mysql.com/apt/ubuntu/dists/noble mysql-8.4-lts'
+  222  sudo rm /etc/apt/sources.list.d/archive_uri-http_repo_mysql_com_apt_ubuntu_dists_noble-noble.list
+  223  https://dev.mysql.com/downloads/repo/apt/
+  224  wget https://dev.mysql.com/downloads/repo/apt/
+  225  wget https://dev.mysql.com/downloads/file/?id=531268
+  226  wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+  227  cd ..
+  228  wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+  229  sudo dpkg -i mysql-apt-config_0.8.32-1_all.deb
+  230  sudo apt-get update
+  231  sudo dpkg -i mysql-apt-config_0.8.32-1_all.deb
+  232  sudo apt-get install mysql-server
+  233  sudo rm /etc/apt/sources.list.d/archive_uri-http_repo_mysql_com_apt_ubuntu_dists_noble_-noble.list
+  234  sudo rm /etc/apt/sources.list.d/archive_uri-http_repo_mysql_com_apt_ubuntu_noble-noble.list
+  235  sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+  236  sudo dpkg -i mysql-apt-config_0.8.32-1_all.deb
+  237  sudo apt-get install mysql-server
+  238  systemctl status mysql
+  239  wget http://mirrors.kernel.org/ubuntu/pool/universe/h/htop/htop_2.2.0-1build1_amd64.deb
+  240  wget http://mirrors.kernel.org/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.6_amd64.deb
+  241  sudo dpkg -r mysql
+  242  sudo dpkg -r mysql-apt-config_0.8.32-1_all.deb
+  243  sudo dpkg -r mysql-apt-config_0.8.32-1_all
+  244  sudo dpkg -r mysql-apt-config_0.8.32-1_all.deb
+  245  sudo dpkg - i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+  246  sudo dpkg -r mysql-connector-j
+  247  wget http://mirrors.kernel.org/ubuntu/pool/universe/h/htop/htop_3.0.5-7_amd64.deb
+  248  sudo dpkg -r mysql-apt-config
+  249  dpkg -l | grep mysql-apt-config
+  250  sudo dpkg -r mysql-apt-config
+  251  sudo dpkg --purge mysql-apt-config
+  252  dpkg -l | grep mysql-apt-config
+  253  history > history.txt
+  254  cd FYNTEST
+  255  ls
+  256  cd Fyntest
+  257  history > history.txt
