@@ -164,3 +164,6 @@
 
 ![alt text](image-36.png)
 
+## Задание 13-15 
+
+В файле AnimalReg.py.
